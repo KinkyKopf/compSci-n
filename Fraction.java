@@ -17,10 +17,13 @@ public class Fraction
 		denom=d;
 		simplify();
 	}
-	public Fraction( double d)
+	public Fraction( double d) throws InterruptedException
 	{
-	
+		num=(int)(d*100000000);
+		denom=100000000;
+		simplify();
 	}
+	//____________________________
 	
 	private void simplify()
 	{
@@ -31,19 +34,40 @@ public class Fraction
 		else 
 			temp=denom;
 	
-		for(int i=1;i<=temp;temp++)
+		for(int i=temp;i>0;i--)
 		{
-			if(num%temp==0&&denom%temp==0)
+//			System.out.println(num%i&&denom%temp==0);
+//			System.out.println(num%i==0&&denom%temp==0);
+			if(num%i==0&&denom%i==0)
 			{
-				num=num/temp;
-				denom/=temp;
+				System.out.println("True");
+				num=num/i;
+				denom/=i;
 			}
 		}
 	}
 	
 	public String toString()
-	{
-		
+	{	
 		return num+"/"+denom;
+	}
+	//_____________________
+	public int getDenominator()
+	{
+		return denom;
+	}
+	public int getNumerator()
+	{
+		return num;
+	}
+	public Fraction add(Fraction f)
+	{
+		int tempN=f.getNumerator();
+		if(f.getDenominator()==denom)
+			return(new Fraction(f.getNumerator()+num,denom));
+		else
+		{
+			f.getNumerator()
+		}
 	}
 }

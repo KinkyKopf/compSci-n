@@ -30,10 +30,16 @@ public class FracMenu {
 				//insert a fraction 
 				break;
 			case 4:
-				///remove fraction
+				///remove fraction at location
 				break;
 			case 5:
-				
+				//remove fraction by value
+				break;
+			case 6:
+				//replace a fraction at a specific location
+				break;
+				default:
+					System.out.println("That is not a valid command, please be better next time");
 			}
 			
 		}

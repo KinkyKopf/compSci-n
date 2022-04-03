@@ -29,10 +29,7 @@ public class Fraction
 	{
 		int temp;
 		
-		if(num>denom)
-			temp=num;
-		else 
-			temp=denom;
+	
 		
 		if(num<0&&denom<0)
 		{
@@ -45,9 +42,14 @@ public class Fraction
 			num=-num;
 		}
 		
+		if(num>denom)
+			temp=num;
+		else 
+			temp=denom;
+		
 		for(int i=temp;i>0;i--)
 		{
-//			System.out.println(num%i&&denom%temp==0);
+//			
 //			System.out.println(num%i==0&&denom%temp==0);
 			if(num%i==0&&denom%i==0)
 			{
@@ -99,6 +101,8 @@ public class Fraction
 	}
 	public int compareTo(Fraction f)
 	{
+		if(num==f.getNumerator()&&denom==f.getDenominator())
+			return 0;
 		int tempN1=f.getNumerator()*denom;
 		int tempN2=num*f.getDenominator();
 		
@@ -117,7 +121,7 @@ public class Fraction
 	}
 	public boolean equals(Fraction f)
 	{
-		return(compareTo(f)==0);
+		return(num==f.getNumerator()&&denom==f.getDenominator());
 	}
 	public boolean equals(double dd)
 	{

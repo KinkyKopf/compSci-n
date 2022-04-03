@@ -1,4 +1,4 @@
-package fractions;
+package unit5;
 
 public class Fraction
 {
@@ -33,7 +33,18 @@ public class Fraction
 			temp=num;
 		else 
 			temp=denom;
-	
+		
+		if(num<0&&denom<0)
+		{
+			num=-num;
+			denom=-denom;
+		}
+		else if(denom<0)
+		{
+			denom=-denom;
+			num=-num;
+		}
+		
 		for(int i=temp;i>0;i--)
 		{
 //			System.out.println(num%i&&denom%temp==0);

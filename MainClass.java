@@ -109,11 +109,17 @@ public class MainClass
 	public static void main(String[] args) throws InterruptedException 
 	{
 		String user;
-		narratorPrintln("Hi I'm Zach, I will be your narrator/guide through my mind for the duration of this game.\n\nFor reference, the narration and my personal thoughts will be in red, evertyhing else will be in black\n\nTry to answer things, clearly and be careful of things like numbers being where they shouldn't\n\nI will try to put things in an easy order but I have a week to to make this so I mean ¯\\_(ツ)_/¯\n\n ");
+		narratorPrintln("Hi I'm Zach, I will be your narrator/guide through my mind for the duration of this game.\n\n My personal thoughts and fourth wall breaks will be in red, evertyhing else will be in black\n\nFeel free to type help at any time if you don't know what to do\n\nI will try to put things in an easy order but I have a week to to make this so I mean  ¯\\_(ツ)_/¯\n\n ");
 		slowPrint("Does this make sense?(y/n): ");
 		user=input.nextLine();
 		if(user.equals("y")||user.equals("yes"))
 			narratorPrintln("Great so glad to see that makes sense!");
+		else if(user.equals("help"))
+		{
+				narratorPrintln("Really?");
+				Thread.sleep(3000);
+				
+		}
 		else
 			narratorPrintln("Too bad, you're already strapped in for the ride and I gave the drunken monkey I call my brain the keys OFF WE GO!");
 		chapterOne();
@@ -158,6 +164,7 @@ public class MainClass
 			}
 		}
 		while(!validAnswer);
+		slowPrintln("After introducing yourself, you decide to go and play and some toys\n\nBefore you is a hammer, blocks and a bird's nest on the wall. ");
 		
 	}
 }

@@ -195,9 +195,6 @@ public class MainClass
 		
 	}
 
-
-	
-
 	public static void chapterOneV2()throws InterruptedException
 	{
 		String user;

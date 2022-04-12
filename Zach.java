@@ -17,7 +17,6 @@ public class Zach
 	{
 		strength+=5;
 		intelligence+=5;
-		
 	}
 	public void newDay()
 	{
@@ -27,6 +26,7 @@ public class Zach
 		tranquility-=10;
 		intelligence-=10;
 		friendship-=10;
-		purpose-=10;//add some if to lower happiness if some stats are below a certian level
+		purpose-=10;//add some if-statement to lower happiness if some stats are below a certian level
 	}
+	
 }

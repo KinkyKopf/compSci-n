@@ -17,7 +17,7 @@ public class MainClass
 	 */
 	static boolean aiAutoRun;
 	static int printSpeed=15;
-	
+	static int day=1;
 	static Scanner input =new Scanner(System.in);
 	public static void slowPrint(String text,int printingSpeed) throws InterruptedException//This slow prints, but you can set the print speed, good for counting.
 	{
@@ -237,7 +237,11 @@ public class MainClass
 		}
 		while(!quit);
 	}
-
+	
+	public static void dayOne() throws x
+	{
+		slowPrintln("\t\tWELCOME TO THE ABYSS, CHALLENGER");
+	}
 }
 
 

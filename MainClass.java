@@ -19,7 +19,8 @@ public class MainClass
 	static int printSpeed=15;
 	static int day=1;
 	static Scanner input =new Scanner(System.in);
-	public static void slowPrint(String text,int printingSpeed) throws InterruptedException//This slow prints, but you can set the print speed, good for counting.
+	static Zach player=new Zach();
+ 	public static void slowPrint(String text,int printingSpeed) throws InterruptedException//This slow prints, but you can set the print speed, good for counting.
 	{
 		//this is for multi-testing where I want it to go as fast as possible
 		for (int i=0;i<text.length();i++)
@@ -114,15 +115,16 @@ public class MainClass
 	public static void main(String[] args) throws InterruptedException 
 	{
 		String user;
-		narratorPrintln("Hi I'm Zach, I will be your narrator/guide through my mind for the duration of this game.\n\nFor reference, the narration and my personal thoughts will be in red, evertyhing else will be in black\n\nTry to answer things, clearly and be careful of things like numbers being where they shouldn't\n\nI will try to put things in an easy order but I have a week to to make this so I mean ¯\\_(ツ)_/¯\n\n ");
-		slowPrint("Does this make sense?(y/n): ");
-		user=input.nextLine().toLowerCase();
-		if(user.equals("y")||user.equals("yes"))
-			narratorPrintln("Great so glad to see that makes sense!");
-		else
-			narratorPrintln("Too bad, you're already strapped in for the ride and I gave the drunken monkey I call my brain the keys OFF WE GO!");
-		chapterOneV2();
-		
+//		printNewspaper(new String[]{"The latest news has revealed ","that this test works"});
+//		narratorPrintln("Hi I'm Zach, I will be your narrator/guide through my mind for the duration of this game.\n\nFor reference, the narration and my personal thoughts will be in red, evertyhing else will be in black\n\nTry to answer things, clearly and be careful of things like numbers being where they shouldn't\n\nI will try to put things in an easy order but I have a week to to make this so I mean ¯\\_(ツ)_/¯\n\n ");
+//		slowPrint("Does this make sense?(y/n): ");
+//		user=input.nextLine().toLowerCase();
+//		if(user.equals("y")||user.equals("yes"))
+//			narratorPrintln("Great so glad to see that makes sense!");
+//		else
+//			narratorPrintln("Too bad, you're already strapped in for the ride and I gave the drunken monkey I call my brain the keys OFF WE GO!");
+//		chapterOneV2();
+		dayOne();
 		
 		
 	}
@@ -238,9 +240,38 @@ public class MainClass
 		while(!quit);
 	}
 	
-	public static void dayOne() throws x
+	public static void dayOne() throws InterruptedException 
 	{
-		slowPrintln("\t\tWELCOME TO THE ABYSS, CHALLENGER");
+		String[] s= {"Welcome back to highschool!","Incoming freshmen, get ready for a great time!","Upcoming events: ","","Asian sun Interschool Tournament: ","This will be my third tournament so I am super excited to try and win.","The way an interschool tournament works is pretty simple,","There are four events: Breaking,Sparring, Forms and Swords.","If you get gold in all four events,"," you have a chance to win the grand champion trophy so train hard!"};
+		printNewspaper(s);
+		
+//		slowPrintln("_______________________________________________________________________\n");
+		slowPrintln("\n\n"+player.toString());
+	}
+	private static void printNewspaper(String[] s) throws InterruptedException
+	{
+		int maxSpaces=70;
+		slowPrintln("_______________________________________________________________________");
+		slowPrintln("|\t\t\t\tTHE GAMBIT\t\t\t\t|");
+		slowPrintln("|Day: "+day+"\t\t\t\t\t\t\t\t\t|");
+		slowPrintln("|_______________________________________________________________________|");
+		for(int i=0;i<s.length;i++)
+		{
+			int indentLength=0;
+			String indent="";
+			indentLength=maxSpaces-s[i].length();
+			if(s[i].length()%2!=0)
+				indentLength+=1;
+			for(int k=0;k<(indentLength)/2;k++)
+				indent+=" ";
+			slowPrint("|"+indent+s[i]+indent);
+			
+			if(s[i].length()%2==0)
+				slowPrint(" ");
+			slowPrintln("|");
+		}
+		slowPrintln("|      ____              ____________       ____________     ___________|");
+		slowPrintln("|_____|    |_____/\\_____/            \\_____/            \\___|           ");
 	}
 }
 
